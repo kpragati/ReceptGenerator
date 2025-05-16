@@ -1,6 +1,6 @@
 import openai
 
-openai.api_key = "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"
+openai.api_key = "sk"
 
 #recepe_generator()
 ingredients = []
