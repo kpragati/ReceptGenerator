@@ -1,6 +1,7 @@
-import openai
+from openai import OpenAI
+import os
 
-openai.api_key = "sk"
+client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
 #recepe_generator()
 ingredients = []
@@ -23,7 +24,7 @@ def recepe_generator(ingradients):
            {"role" : "assistent", "content" : "you are high end chef. You are generate a receipe in given ingredients"}]
       )
 
-    response = openai.ChatCompletion.create(
+    response = client.chat.completions.create(
        model = "gpt-4o",
        message = message,
        max_tokens = 300,
